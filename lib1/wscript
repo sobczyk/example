@@ -1,0 +1,14 @@
+#! /usr/bin/env python
+
+#def configure(conf):
+	#conf.load('compiler_cxx')
+
+def build(bld):
+	bld.shlib(
+		source = 'lib1.cpp',
+		export_includes = '.',
+		defines='SOMEDEFINE',
+		target = 'mylib1',)
+	#this won't be used
+	bld.env.DEFINES_mylib1 = 'SOMEDEFINE'
+

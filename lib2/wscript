@@ -1,0 +1,12 @@
+#! /usr/bin/env python
+
+#def configure(conf):
+	#conf.load('compiler_cxx')
+
+def build(bld):
+	print "check the var", bld.env.DEFINES_mylib1
+	bld.shlib(
+		source = 'lib2.cpp',
+		target = 'mylib2',
+		export_includes = '.',
+		use= 'mylib1')
